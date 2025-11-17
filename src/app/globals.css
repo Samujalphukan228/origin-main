@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+
+/* ✅ Hide all scrollbars globally */
+* {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+}
+
+
+/* Remove ALL outlines from inputs */
+input, textarea {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+input:focus, textarea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
