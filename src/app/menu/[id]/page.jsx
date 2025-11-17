@@ -9,12 +9,9 @@ import {
     Loader2, 
     Share2, 
     Heart, 
-    ShoppingCart, 
     Check,
     ChefHat,
     Leaf,
-    Plus,
-    Minus,
     X
 } from 'lucide-react';
 import Link from 'next/link';
@@ -27,14 +24,12 @@ const MenuDetailPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [selectedImage, setSelectedImage] = useState(0);
-    const [quantity, setQuantity] = useState(1);
-    const [addedToCart, setAddedToCart] = useState(false);
     const [isFavorite, setIsFavorite] = useState(false);
     const [imageLoading, setImageLoading] = useState(true);
     const [showImageModal, setShowImageModal] = useState(false);
     const [imageError, setImageError] = useState(false);
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    const API_URL = process.env.NEXT_PUBLIC_API_URL 
 
     useEffect(() => {
         if (params.id) {
@@ -83,12 +78,6 @@ const MenuDetailPage = () => {
         }
     };
 
-    const handleAddToCart = () => {
-        console.log('Add to cart:', { menuId: menu._id, quantity });
-        setAddedToCart(true);
-        setTimeout(() => setAddedToCart(false), 2000);
-    };
-
     const handleToggleFavorite = () => {
         const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
         let newFavorites;
@@ -124,9 +113,6 @@ const MenuDetailPage = () => {
     const copyToClipboard = () => {
         navigator.clipboard.writeText(window.location.href);
     };
-
-    const incrementQuantity = () => setQuantity(prev => prev + 1);
-    const decrementQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
 
     const handleImageChange = (index) => {
         setSelectedImage(index);
@@ -358,62 +344,6 @@ const MenuDetailPage = () => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Quantity Selector */}
-                        <div>
-                            <h2 className="text-xs uppercase tracking-wider text-gray-500 font-medium mb-3">Quantity</h2>
-                            <div className="inline-flex items-center gap-3 bg-gray-100 p-1 rounded-lg">
-                                <button
-                                    onClick={decrementQuantity}
-                                    className="w-10 h-10 rounded-md bg-white hover:bg-[#5F6754] hover:text-white border border-gray-200 flex items-center justify-center transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-gray-900"
-                                    disabled={quantity <= 1}
-                                >
-                                    <Minus className="w-4 h-4" />
-                                </button>
-                                <span className="text-xl font-light w-10 text-center">{quantity}</span>
-                                <button
-                                    onClick={incrementQuantity}
-                                    className="w-10 h-10 rounded-md bg-white hover:bg-[#5F6754] hover:text-white border border-gray-200 flex items-center justify-center transition-colors"
-                                >
-                                    <Plus className="w-4 h-4" />
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Total Price */}
-                        <div className="bg-[#5F6754]/5 p-5 rounded-lg border border-[#5F6754]/20">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="text-xs uppercase tracking-wider text-gray-600 font-medium mb-1">Total</p>
-                                    <p className="text-sm text-gray-500">{quantity} × ${menu.price.toFixed(2)}</p>
-                                </div>
-                                <span className="text-3xl font-light text-[#5F6754]">
-                                    ${(menu.price * quantity).toFixed(2)}
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Add to Cart Button */}
-                        <button
-                            onClick={handleAddToCart}
-                            className={`w-full py-4 rounded-lg font-medium uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl ${
-                                addedToCart
-                                    ? 'bg-green-500 text-white'
-                                    : 'bg-[#5F6754] text-white hover:bg-[#4a5143]'
-                            }`}
-                        >
-                            {addedToCart ? (
-                                <>
-                                    <Check className="w-5 h-5" />
-                                    Added to Cart
-                                </>
-                            ) : (
-                                <>
-                                    <ShoppingCart className="w-5 h-5" />
-                                    Add to Cart
-                                </>
-                            )}
-                        </button>
 
                         {/* Additional Info */}
                         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 space-y-2.5">
