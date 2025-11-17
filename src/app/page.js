@@ -208,7 +208,7 @@ const LandingPage = () => {
                     {/* Trust Indicators */}
                     <div className="mt-12 flex items-center justify-center gap-8 flex-wrap opacity-80">
                         <div className="text-center">
-                            <div className="text-3xl font-bold">1000+</div>
+                            <div className="text-3xl font-bold">10+</div>
                             <div className="text-sm opacity-75">Happy Customers</div>
                         </div>
                         <div className="hidden sm:block w-px h-12 bg-white/20" />
