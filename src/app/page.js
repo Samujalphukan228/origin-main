@@ -183,20 +183,17 @@ const HeroSection = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
                             <Link href="/menu">
-                                <button className="group bg-gradient-to-r from-[#5F6754] to-[#4a5143] text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
-                                    View Demo
-                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                            </Link>
-                            <button 
+                                <button 
                                 onClick={() => setIsVideoPlaying(true)}
                                 className="group bg-white border-2 border-gray-200 px-8 py-4 rounded-full text-lg font-semibold hover:border-[#5F6754] hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
                             >
                                 <div className="w-10 h-10 bg-[#5F6754]/10 rounded-full flex items-center justify-center group-hover:bg-[#5F6754]/20">
-                                    <Play className="w-5 h-5 text-[#5F6754] ml-0.5" />
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </div>
-                                Watch Video
+                                View Demo
                             </button>
+                            </Link>
+
                         </div>
 
                         {/* Trust badges */}
