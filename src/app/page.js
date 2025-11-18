@@ -43,9 +43,9 @@ const FEATURES = [
 ];
 
 const STATS = [
-    { value: '500+', label: 'Restaurants', icon: Utensils },
-    { value: '50K+', label: 'Daily Orders', icon: ShoppingCart },
-    { value: '4.9★', label: 'Rating', icon: Star },
+    { value: '10+', label: 'Restaurants', icon: Utensils },
+    { value: '20+', label: 'Daily Orders', icon: ShoppingCart },
+    { value: '9.1', label: 'Rating', icon: Star },
     { value: '99.9%', label: 'Uptime', icon: Shield }
 ];
 
@@ -102,11 +102,6 @@ const NavBar = () => {
                         <Link href="#features" className="text-gray-600 hover:text-[#5F6754] transition-colors">Features</Link>
                         <Link href="#solutions" className="text-gray-600 hover:text-[#5F6754] transition-colors">Solutions</Link>
                         <Link href="#testimonials" className="text-gray-600 hover:text-[#5F6754] transition-colors">Testimonials</Link>
-                        <Link href="/menu">
-                            <button className="bg-gradient-to-r from-[#5F6754] to-[#4a5143] text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300">
-                                View Demo
-                            </button>
-                        </Link>
                     </div>
 
                     <button 
@@ -124,11 +119,6 @@ const NavBar = () => {
                             <Link href="#features" className="block py-2 text-gray-600">Features</Link>
                             <Link href="#solutions" className="block py-2 text-gray-600">Solutions</Link>
                             <Link href="#testimonials" className="block py-2 text-gray-600">Testimonials</Link>
-                            <Link href="/menu" className="block">
-                                <button className="w-full bg-gradient-to-r from-[#5F6754] to-[#4a5143] text-white py-2 rounded-full">
-                                    View Demo
-                                </button>
-                            </Link>
                         </div>
                     </div>
                 )}
@@ -187,14 +177,14 @@ const HeroSection = () => {
                         </h1>
 
                         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                            Join 500+ restaurants using our platform to streamline operations, 
+                            Join 10+ restaurants using our platform to streamline operations, 
                             boost profits, and deliver exceptional dining experiences.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
                             <Link href="/menu">
                                 <button className="group bg-gradient-to-r from-[#5F6754] to-[#4a5143] text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
-                                    Get Started Free
+                                    View Demo
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </Link>
@@ -205,7 +195,7 @@ const HeroSection = () => {
                                 <div className="w-10 h-10 bg-[#5F6754]/10 rounded-full flex items-center justify-center group-hover:bg-[#5F6754]/20">
                                     <Play className="w-5 h-5 text-[#5F6754] ml-0.5" />
                                 </div>
-                                Watch Demo
+                                Watch Video
                             </button>
                         </div>
 
@@ -233,9 +223,9 @@ const HeroSection = () => {
                                             <span className="text-sm font-semibold text-gray-600">Today's Performance</span>
                                             <TrendingUp className="w-5 h-5 text-green-600" />
                                         </div>
-                                        <div className="text-3xl font-bold text-gray-900 mb-2">$12,847</div>
+                                        <div className="text-3xl font-bold text-gray-900 mb-2">$847</div>
                                         <div className="flex items-center gap-2">
-                                            <span className="text-green-600 text-sm font-medium">↑ 23%</span>
+                                            <span className="text-green-600 text-sm font-medium">↑ 15%</span>
                                             <span className="text-gray-500 text-sm">vs yesterday</span>
                                         </div>
                                     </div>
@@ -243,10 +233,10 @@ const HeroSection = () => {
                                     {/* Mini stats */}
                                     <div className="grid grid-cols-2 gap-4">
                                         {[
-                                            { label: 'Orders', value: '142', icon: ShoppingCart, color: 'blue' },
-                                            { label: 'Customers', value: '89', icon: Users, color: 'purple' },
-                                            { label: 'Avg Order', value: '$90', icon: Award, color: 'orange' },
-                                            { label: 'Rating', value: '4.9', icon: Star, color: 'yellow' }
+                                            { label: 'Orders', value: '12', icon: ShoppingCart, color: 'blue' },
+                                            { label: 'Customers', value: '8', icon: Users, color: 'purple' },
+                                            { label: 'Avg Order', value: '$70', icon: Award, color: 'orange' },
+                                            { label: 'Rating', value: '9.1', icon: Star, color: 'yellow' }
                                         ].map((stat, i) => (
                                             <div key={i} className="bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-shadow">
                                                 <div className={`w-10 h-10 bg-${stat.color}-100 rounded-lg flex items-center justify-center mb-3`}>
@@ -337,11 +327,6 @@ const ModernFeatureCard = ({ feature, index }) => {
                 
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">{feature.description}</p>
-                
-                <button className="inline-flex items-center gap-2 text-[#5F6754] font-semibold group/btn">
-                    Learn more 
-                    <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                </button>
             </div>
         </div>
     );
@@ -446,11 +431,11 @@ const LandingPage = () => {
                         Ready to transform your restaurant?
                     </h2>
                     <p className="text-xl text-white/90 mb-10">
-                        Join hundreds of successful restaurants. Start your free trial today.
+                        Join our growing community of successful restaurants. Experience the difference today.
                     </p>
                     <Link href="/menu">
                         <button className="group bg-white text-[#5F6754] px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center gap-3">
-                            Get Started Now
+                            View Demo Now
                             <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                         </button>
                     </Link>
